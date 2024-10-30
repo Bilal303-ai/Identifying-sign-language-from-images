@@ -14,7 +14,7 @@ class ImageClassifier(nn.Module):
             nn.ReLU(),
             nn.Conv2d(in_channels=64, out_channels=128, kernel_size=5)
             nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2)
+            nn.MaxPool2d(kernel_size=2),
             nn.Dropout(p=0.2),
             nn.Flatten(),
             nn.Linear(128 * 19 * 19, 128),
