@@ -6,7 +6,7 @@ from model import ImageClassifier
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-paths = [r'path_to_first_image', r'path_to_second_image', ....]
+paths = ['path_to_first_image, 'path_to_second_image', 'path_to_third_image',....]
 
 transform = transforms.Compose([
   transforms.Resize((200, 200)),
