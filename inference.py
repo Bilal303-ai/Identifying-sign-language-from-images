@@ -1,3 +1,7 @@
+import torch
+from torchvision import transforms
+from PIL import Image
+
 transform = transforms.Compose([
   transforms.Resize((200, 200)),
   transforms.ToTensor(),
@@ -11,7 +15,7 @@ def make_inference(paths):
     images.append(img_tensor)
   img_tensors = torch.stack(images)
   
-  model = torch.load(segn_language.pth)
+  model = torch.load(sign_language.pth)
   model.eval()
 
   with torch.no_grad():
