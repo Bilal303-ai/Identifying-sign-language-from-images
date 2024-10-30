@@ -1,6 +1,7 @@
 import torch
 from torchvision import transforms
 from PIL import Image
+from utils import label_to_class
 
 transform = transforms.Compose([
   transforms.Resize((200, 200)),
