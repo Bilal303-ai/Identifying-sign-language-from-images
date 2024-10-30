@@ -1,3 +1,5 @@
+import torch.nn as nn
+
 class ImageClassifier(nn.Module):
     def __init__(self, num_classes):
         super().__init__()
