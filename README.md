@@ -14,7 +14,7 @@ The model was trained on [**ASL Alphabet**](https://www.kaggle.com/datasets/gras
    
    ```bash
    git clone https://github.com/Bilal303-ai/Interpreting-sign-language-from-images
-   cd Identifying-sign-language-from-images
+   cd Interpreting-sign-language-from-images
    ```
 3. Install `Pillow`, `torch` and `torchvision`
 4. Open `inference.py` and look up for the python list `paths = ['path_to_first_image', 'path_to_second_image', 'path_to_third_image',...]` and replace `'path_to_first_image', 'path_to_second_image', 'path_to_third_image',...` with actual file paths.
