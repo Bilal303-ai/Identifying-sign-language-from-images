@@ -35,7 +35,7 @@ def make_inference(paths):
   predicted_string = ''
   
   for i in predicted_classes:
-    if i = 'space':
+    if i == 'space':
       predicted_string.append(' ')
     else:
       predicted_string.append(i)
