@@ -2,6 +2,11 @@ import torch
 from torchvision import transforms
 from PIL import Image
 from utils import label_to_class
+from model import ImageClassifier
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+paths = [r'path_to_first_image', r'path_to_second_image', ....]
 
 transform = transforms.Compose([
   transforms.Resize((200, 200)),
@@ -16,7 +21,7 @@ def make_inference(paths):
     images.append(img_tensor)
   img_tensors = torch.stack(images)
   
-  model = torch.load(sign_language.pth)
+  model = torch.load('sign_language.pth', map_location=torch.device('cpu'), weights_only=False)
   model.eval()
 
   with torch.no_grad():
@@ -25,7 +30,7 @@ def make_inference(paths):
   predicted_labels = output.argmax(1).numpy()
   predicted_classes = []
   for i in predicted_labels:
-    predicted_classes.append(label_to_class[predicted_labels[i]])
+    predicted_classes.append(label_to_class[i])
   
   predicted_string = ''
   
@@ -37,4 +42,4 @@ def make_inference(paths):
   return predicted_string
 
 result = make_inference(paths)
-
+print(result)
